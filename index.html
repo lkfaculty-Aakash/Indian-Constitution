@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Making of the Indian Constitution</title>
+    <title>Salient Features of Indian Constitution</title>
     <style>
         * {
             margin: 0;
@@ -13,13 +13,13 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
             min-height: 100vh;
             color: #333;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -32,14 +32,18 @@
         }
         
         .header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .header p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             opacity: 0.9;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
         
         .nav-tabs {
@@ -51,195 +55,258 @@
         }
         
         .nav-tab {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.15);
             color: white;
-            padding: 12px 24px;
+            padding: 15px 25px;
             border: none;
-            border-radius: 25px;
+            border-radius: 30px;
             cursor: pointer;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            font-weight: 500;
+            backdrop-filter: blur(15px);
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         
         .nav-tab:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
         
         .nav-tab.active {
             background: rgba(255,255,255,0.3);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
         }
         
         .content-section {
             display: none;
             background: rgba(255,255,255,0.95);
-            border-radius: 20px;
-            padding: 30px;
+            border-radius: 25px;
+            padding: 35px;
             margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            backdrop-filter: blur(10px);
-            animation: fadeInUp 0.6s ease-out;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            backdrop-filter: blur(20px);
+            animation: fadeInUp 0.8s ease-out;
         }
         
         .content-section.active {
             display: block;
         }
         
-        .timeline {
-            position: relative;
-            padding: 20px 0;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(to bottom, #FF6B6B, #4ECDC4);
-            transform: translateX(-50%);
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin: 40px 0;
-            width: 45%;
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .timeline-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-        
-        .timeline-item:nth-child(even) {
-            left: 55%;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: #FF6B6B;
-            border-radius: 50%;
-            top: 20px;
-        }
-        
-        .timeline-item:nth-child(odd)::before {
-            right: -60px;
-        }
-        
-        .timeline-item:nth-child(even)::before {
-            left: -60px;
-            background: #4ECDC4;
-        }
-        
-        .timeline-date {
-            color: #666;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        
-        .stats-grid {
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            border-left: 6px solid #FF6B6B;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #FF6B6B, #4ECDC4, #45B7D1);
+        }
+        
+        .feature-card:nth-child(2n) {
+            border-left-color: #4ECDC4;
+        }
+        
+        .feature-card:nth-child(3n) {
+            border-left-color: #45B7D1;
+        }
+        
+        .feature-card:nth-child(4n) {
+            border-left-color: #96CEB4;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+        
+        .feature-number {
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .feature-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .feature-description {
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .feature-highlight {
+            background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(78,205,196,0.1));
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-left: 3px solid #FF6B6B;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: rgba(102,126,234,0.05);
+        }
+        
+        .comparison-table tr:hover {
+            background: rgba(102,126,234,0.1);
+            transform: scale(1.01);
+            transition: all 0.3s ease;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin: 30px 0;
         }
         
-        .stat-card {
+        .stat-box {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            padding: 30px;
-            border-radius: 15px;
+            padding: 25px;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             transition: transform 0.3s ease;
         }
         
-        .stat-card:hover {
-            transform: translateY(-10px);
+        .stat-box:hover {
+            transform: translateY(-8px) rotate(1deg);
         }
         
         .stat-number {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: bold;
             margin-bottom: 10px;
             color: #FFD93D;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
-        .committee-grid {
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(78,205,196,0.1));
+            border-radius: 20px;
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 5px solid #FF6B6B;
+            position: relative;
+        }
+        
+        .highlight-box::before {
+            content: '💡';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .rights-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             margin: 20px 0;
         }
         
-        .committee-card {
+        .rights-card {
             background: white;
-            border-left: 5px solid #FF6B6B;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-top: 4px solid #4ECDC4;
+            transition: all 0.3s ease;
+        }
+        
+        .rights-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+        
+        .emergency-types {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .emergency-card {
+            flex: 1;
+            min-width: 250px;
+            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+            color: white;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(255,107,107,0.3);
         }
         
-        .committee-card:nth-child(even) {
-            border-left-color: #4ECDC4;
+        .emergency-card:nth-child(2) {
+            background: linear-gradient(135deg, #4ECDC4, #44A08D);
+            box-shadow: 0 8px 25px rgba(78,205,196,0.3);
         }
         
-        .committee-card:hover {
-            transform: translateX(10px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-        
-        .committee-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        
-        .facts-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .facts-list li {
-            background: linear-gradient(90deg, rgba(255,107,107,0.1), rgba(78,205,196,0.1));
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 10px;
-            border-left: 4px solid #FF6B6B;
-            transition: all 0.3s ease;
-        }
-        
-        .facts-list li:nth-child(even) {
-            border-left-color: #4ECDC4;
-            background: linear-gradient(90deg, rgba(78,205,196,0.1), rgba(255,107,107,0.1));
-        }
-        
-        .facts-list li:hover {
-            transform: translateX(10px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .highlight {
-            background: linear-gradient(120deg, #FFD93D, #FF6B6B);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: bold;
+        .emergency-card:nth-child(3) {
+            background: linear-gradient(135deg, #45B7D1, #96C7ED);
+            box-shadow: 0 8px 25px rgba(69,183,209,0.3);
         }
         
         @keyframes fadeInDown {
@@ -264,27 +331,35 @@
             }
         }
         
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
         @media (max-width: 768px) {
             .header h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
             
-            .timeline::before {
-                left: 30px;
-            }
-            
-            .timeline-item {
-                width: calc(100% - 80px);
-                left: 60px !important;
-            }
-            
-            .timeline-item::before {
-                left: -50px !important;
+            .features-grid {
+                grid-template-columns: 1fr;
             }
             
             .nav-tabs {
                 flex-direction: column;
                 align-items: center;
+            }
+            
+            .comparison-table {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -292,280 +367,468 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🏛️ Making of the Indian Constitution</h1>
-            <p>A Visual Journey Through History (1946-1950)</p>
+            <h1>⚖️ Salient Features of the Constitution</h1>
+            <p>Exploring the Key Characteristics of India's Supreme Law</p>
         </div>
         
         <div class="nav-tabs">
-            <button class="nav-tab active" onclick="showSection('timeline')">📅 Timeline</button>
-            <button class="nav-tab" onclick="showSection('stats')">📊 Key Statistics</button>
-            <button class="nav-tab" onclick="showSection('committees')">👥 Committees</button>
-            <button class="nav-tab" onclick="showSection('facts')">💡 Important Facts</button>
-            <button class="nav-tab" onclick="showSection('enforcement')">⚖️ Enforcement</button>
+            <button class="nav-tab active" onclick="showSection('overview')">🏛️ Overview</button>
+            <button class="nav-tab" onclick="showSection('structure')">📋 Structure</button>
+            <button class="nav-tab" onclick="showSection('governance')">👥 Governance</button>
+            <button class="nav-tab" onclick="showSection('rights')">🛡️ Rights & Duties</button>
+            <button class="nav-tab" onclick="showSection('special')">⭐ Special Features</button>
         </div>
         
-        <div id="timeline" class="content-section active">
-            <h2>📅 Constitutional Timeline</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">November 1946</div>
-                    <h3>🏗️ Constituent Assembly Formation</h3>
-                    <p>Constituent Assembly constituted under Cabinet Mission Plan</p>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">July 22, 1947</div>
-                    <h3>🇮🇳 National Flag Adopted</h3>
-                    <p>The tricolor was officially adopted as India's national flag</p>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">August 29, 1947</div>
-                    <h3>📝 Drafting Committee Established</h3>
-                    <p>Seven-member committee under Dr. B.R. Ambedkar formed</p>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">February 1948</div>
-                    <h3>📄 First Draft Published</h3>
-                    <p>Initial draft made available for public discussion</p>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">October 1948</div>
-                    <h3>📄 Second Draft Published</h3>
-                    <p>Revised draft incorporating public feedback</p>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">November 4, 1948</div>
-                    <h3>📖 First Reading</h3>
-                    <p>Dr. Ambedkar introduced final draft in Assembly</p>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">November 26, 1949</div>
-                    <h3>✅ Constitution Adopted</h3>
-                    <p>284 members signed the Constitution into existence</p>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">January 24, 1950</div>
-                    <h3>🎵 National Symbols</h3>
-                    <p>National anthem adopted & Dr. Rajendra Prasad elected as President</p>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">January 26, 1950</div>
-                    <h3>🎉 Constitution Enforced</h3>
-                    <p>Constitution came into full effect on Republic Day</p>
-                </div>
+        <div id="overview" class="content-section active">
+            <h2>🏛️ Constitutional Overview</h2>
+            
+            <div class="highlight-box">
+                <h3>🌟 World's Lengthiest Written Constitution</h3>
+                <p>The Indian Constitution stands as the most comprehensive written constitution globally, reflecting the complex needs of a diverse democracy.</p>
             </div>
-        </div>
-        
-        <div id="stats" class="content-section">
-            <h2>📊 Key Statistics</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">2</div>
-                    <div>Years, 11 Months, 18 Days</div>
-                    <p>Total time taken to create the Constitution</p>
+            
+            <h3>📊 Constitution Length Comparison</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Country</th>
+                        <th>Articles/Sections</th>
+                        <th>Type</th>
+                        <th>Special Feature</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>🇮🇳 India</strong></td>
+                        <td><strong>395+ Articles</strong></td>
+                        <td>Written</td>
+                        <td>Longest & Most Detailed</td>
+                    </tr>
+                    <tr>
+                        <td>🇺🇸 United States</td>
+                        <td>7 Articles</td>
+                        <td>Written</td>
+                        <td>Oldest Written Constitution</td>
+                    </tr>
+                    <tr>
+                        <td>🇦🇺 Australia</td>
+                        <td>128 Sections</td>
+                        <td>Written</td>
+                        <td>Federal Structure</td>
+                    </tr>
+                    <tr>
+                        <td>🇨🇳 China</td>
+                        <td>138 Articles</td>
+                        <td>Written</td>
+                        <td>Socialist Constitution</td>
+                    </tr>
+                    <tr>
+                        <td>🇨🇦 Canada</td>
+                        <td>147 Sections</td>
+                        <td>Written</td>
+                        <td>Parliamentary System</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-number">395+</div>
+                    <div>Original Articles</div>
                 </div>
-                
-                <div class="stat-card">
-                    <div class="stat-number">11</div>
-                    <div>Sessions</div>
-                    <p>Number of sessions held by the Assembly</p>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-number">114</div>
-                    <div>Days</div>
-                    <p>Days spent considering the Draft Constitution</p>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-number">141</div>
-                    <div>Days</div>
-                    <p>Days the Drafting Committee worked</p>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-number">60</div>
-                    <div>Countries</div>
-                    <p>Constitutions studied by the makers</p>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-number">7653</div>
-                    <div>Amendments</div>
-                    <p>Total amendments proposed during discussions</p>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-number">2473</div>
-                    <div>Amendments</div>
-                    <p>Amendments actually discussed in Assembly</p>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-number">₹64</div>
-                    <div>Lakhs</div>
-                    <p>Total cost of making the Constitution</p>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-number">395</div>
-                    <div>Articles</div>
-                    <p>Articles in the original Constitution</p>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-number">8</div>
+                <div class="stat-box">
+                    <div class="stat-number">12</div>
                     <div>Schedules</div>
-                    <p>Schedules in the original Constitution</p>
                 </div>
-                
-                <div class="stat-card">
-                    <div class="stat-number">284</div>
-                    <div>Members</div>
-                    <p>Members who signed the Constitution</p>
+                <div class="stat-box">
+                    <div class="stat-number">60+</div>
+                    <div>Countries Studied</div>
                 </div>
-                
-                <div class="stat-card">
-                    <div class="stat-number">299</div>
-                    <div>Total Members</div>
-                    <p>Total strength of the Assembly</p>
-                </div>
-            </div>
-        </div>
-        
-        <div id="committees" class="content-section">
-            <h2>👥 Major Committees of the Constituent Assembly</h2>
-            <div class="committee-grid">
-                <div class="committee-card">
-                    <div class="committee-title">📝 Drafting Committee</div>
-                    <p><strong>Chairman:</strong> Dr. B.R. Ambedkar</p>
-                    <p><strong>Members:</strong> 7</p>
-                    <p><strong>Key Role:</strong> Prepared the draft Constitution after considering proposals from various committees</p>
-                    <p><strong>Achievement:</strong> Most important committee that shaped the final Constitution</p>
-                </div>
-                
-                <div class="committee-card">
-                    <div class="committee-title">🏛️ Union Powers Committee</div>
-                    <p><strong>Focus:</strong> Defining powers of the Union Government</p>
-                    <p><strong>Impact:</strong> Established federal structure and distribution of powers</p>
-                </div>
-                
-                <div class="committee-card">
-                    <div class="committee-title">🏢 Provincial Constitution Committee</div>
-                    <p><strong>Focus:</strong> State government structures and functions</p>
-                    <p><strong>Impact:</strong> Shaped state-level governance framework</p>
-                </div>
-                
-                <div class="committee-card">
-                    <div class="committee-title">⚖️ Fundamental Rights Committee</div>
-                    <p><strong>Focus:</strong> Basic rights and freedoms of citizens</p>
-                    <p><strong>Impact:</strong> Ensured constitutional protection of civil liberties</p>
-                </div>
-                
-                <div class="committee-card">
-                    <div class="committee-title">🎯 Steering Committee</div>
-                    <p><strong>Focus:</strong> Overall coordination and scheduling</p>
-                    <p><strong>Impact:</strong> Managed the Assembly's proceedings efficiently</p>
-                </div>
-                
-                <div class="committee-card">
-                    <div class="committee-title">📋 Rules Committee</div>
-                    <p><strong>Focus:</strong> Procedural guidelines for the Assembly</p>
-                    <p><strong>Impact:</strong> Established systematic working methods</p>
+                <div class="stat-box">
+                    <div class="stat-number">105</div>
+                    <div>Constitutional Amendments</div>
                 </div>
             </div>
             
-            <div style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(78,205,196,0.1)); border-radius: 15px;">
-                <h3>🎯 Special Focus: Drafting Committee</h3>
-                <p>The Drafting Committee was established on <span class="highlight">August 29, 1947</span> and was the most crucial committee of the Constituent Assembly. Under Dr. B.R. Ambedkar's leadership, this seven-member committee:</p>
-                <ul style="margin: 15px 0; padding-left: 20px;">
-                    <li>Published the first draft in <strong>February 1948</strong></li>
-                    <li>Allowed <strong>8 months</strong> for public discussion and feedback</li>
-                    <li>Published the revised second draft in <strong>October 1948</strong></li>
-                    <li>Completed their work in less than <strong>6 months of actual working</strong></li>
-                    <li>Sat for only <strong>141 days</strong> in total</li>
+            <div class="highlight-box">
+                <h3>🌍 Sources of Indian Constitution</h3>
+                <p><strong>The Indian Constitution is a unique blend drawn from various global sources:</strong></p>
+                <ul style="margin-top: 15px; padding-left: 20px; line-height: 1.8;">
+                    <li><strong>🇬🇧 United Kingdom:</strong> Parliamentary System, Rule of Law, Legislative Procedure</li>
+                    <li><strong>🇺🇸 United States:</strong> Fundamental Rights, Judicial Review, Independence of Judiciary</li>
+                    <li><strong>🇮🇪 Ireland:</strong> Directive Principles of State Policy, Nomination of Rajya Sabha members</li>
+                    <li><strong>🇨🇦 Canada:</strong> Federation with strong center, Residuary powers with center</li>
+                    <li><strong>🇦🇺 Australia:</strong> Concurrent list, Language of Preamble</li>
+                    <li><strong>🇿🇦 South Africa:</strong> Procedure for Constitutional Amendment</li>
                 </ul>
             </div>
         </div>
         
-        <div id="facts" class="content-section">
-            <h2>💡 Fascinating Facts</h2>
-            <ul class="facts-list">
-                <li>🐘 <strong>Symbol:</strong> The Elephant was adopted as the official symbol (seal) of the Constituent Assembly</li>
+        <div id="structure" class="content-section">
+            <h2>📋 Constitutional Structure</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-number">1</div>
+                    <div class="feature-title">⚖️ Blend of Rigidity and Flexibility</div>
+                    <div class="feature-description">
+                        The Indian Constitution is neither too rigid nor too flexible. It strikes a perfect balance.
+                    </div>
+                    <div class="feature-highlight">
+                        <strong>Rigid aspects:</strong> Some provisions require special majority + ratification by states<br>
+                        <strong>Flexible aspects:</strong> Some provisions can be amended by simple majority
+                    </div>
+                </div>
                 
-                <li>👨‍💼 <strong>Constitutional Advisor:</strong> Sir B.N. Rau served as the legal advisor to the Constituent Assembly</li>
+                <div class="feature-card">
+                    <div class="feature-number">2</div>
+                    <div class="feature-title">🏛️ Federal System with Unitary Bias</div>
+                    <div class="feature-description">
+                        India has a federal structure but with a strong unitary bias, especially during emergencies.
+                    </div>
+                    <div class="feature-highlight">
+                        <strong>Federal features:</strong> Dual polity, Written Constitution, Division of powers<br>
+                        <strong>Unitary features:</strong> Strong center, Single Constitution, Integrated judiciary
+                    </div>
+                </div>
                 
-                <li>📝 <strong>Secretary:</strong> H.V.R. Iyengar was the Secretary to the Constituent Assembly</li>
+                <div class="feature-card">
+                    <div class="feature-number">3</div>
+                    <div class="feature-title">🏢 Parliamentary Form of Government</div>
+                    <div class="feature-description">
+                        Adopted the Westminster model with executive responsibility to legislature.
+                    </div>
+                    <div class="feature-highlight">
+                        <strong>Features:</strong> Council of Ministers responsible to Parliament, Prime Minister as head of government, President as nominal head
+                    </div>
+                </div>
                 
-                <li>✍️ <strong>Master Calligrapher:</strong> Prem Behari Narain Raizada handwrote the original Constitution in flowing italic style</li>
+                <div class="feature-card">
+                    <div class="feature-number">4</div>
+                    <div class="feature-title">⚖️ Parliamentary Sovereignty + Judicial Supremacy</div>
+                    <div class="feature-description">
+                        Unique synthesis where Parliament can make laws but courts can review their constitutionality.
+                    </div>
+                    <div class="feature-highlight">
+                        <strong>Balance:</strong> Parliament supreme in law-making, Judiciary supreme in constitutional interpretation
+                    </div>
+                </div>
                 
-                <li>🎨 <strong>Artistic Beauty:</strong> Artists from Shantiniketan, including Nand Lal Bose and Beohar Rammanohar Sinha, beautified and decorated the original Constitution</li>
+                <div class="feature-card">
+                    <div class="feature-number">5</div>
+                    <div class="feature-title">🏛️ Integrated and Independent Judiciary</div>
+                    <div class="feature-description">
+                        Single integrated judicial system with Supreme Court at the apex.
+                    </div>
+                    <div class="feature-highlight">
+                        <strong>Independence:</strong> Security of tenure, Fixed salaries, Separate budget, Contempt of court powers
+                    </div>
+                </div>
                 
-                <li>🖼️ <strong>Preamble Artist:</strong> Beohar Rammanohar Sinha illuminated and ornamented the original Preamble</li>
-                
-                <li>🇮🇳 <strong>Hindi Version:</strong> Vasant Krishan Vaidya did the calligraphy for the Hindi version, elegantly decorated by Nand Lal Bose</li>
-                
-                <li>📊 <strong>Amendments Galore:</strong> Out of 7,653 proposed amendments, only 2,473 were actually discussed - showing the thorough deliberation process</li>
-                
-                <li>💰 <strong>Cost-Effective:</strong> The entire Constitution-making process cost only ₹64 lakhs - remarkable value for creating the world's longest written constitution</li>
-                
-                <li>🌍 <strong>Global Research:</strong> Constitution-makers studied approximately 60 different national constitutions from around the world</li>
-            </ul>
+                <div class="feature-card">
+                    <div class="feature-number">6</div>
+                    <div class="feature-title">🗳️ Universal Adult Franchise</div>
+                    <div class="feature-description">
+                        Every citizen aged 18+ has the right to vote without discrimination.
+                    </div>
+                    <div class="feature-highlight">
+                        <strong>Historical note:</strong> Voting age reduced from 21 to 18 years in 1989 by 61st Amendment (1988)
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>🌐 Federal Countries Worldwide</h3>
+                <p>Of the eight largest countries by area, seven are federal:</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 15px;">
+                    <span style="background: #FF6B6B; color: white; padding: 8px 15px; border-radius: 20px;">🇷🇺 Russia</span>
+                    <span style="background: #4ECDC4; color: white; padding: 8px 15px; border-radius: 20px;">🇨🇦 Canada</span>
+                    <span style="background: #45B7D1; color: white; padding: 8px 15px; border-radius: 20px;">🇺🇸 USA</span>
+                    <span style="background: #96CEB4; color: white; padding: 8px 15px; border-radius: 20px;">🇧🇷 Brazil</span>
+                    <span style="background: #FFEAA7; color: #333; padding: 8px 15px; border-radius: 20px;">🇦🇺 Australia</span>
+                    <span style="background: #FD79A8; color: white; padding: 8px 15px; border-radius: 20px;">🇮🇳 India</span>
+                    <span style="background: #A29BFE; color: white; padding: 8px 15px; border-radius: 20px;">🇦🇷 Argentina</span>
+                </div>
+                <p style="margin-top: 15px;"><strong>Exception:</strong> 🇨🇳 China (3rd largest) is unitary</p>
+            </div>
         </div>
         
-        <div id="enforcement" class="content-section">
-            <h2>⚖️ Enforcement & Implementation</h2>
+        <div id="governance" class="content-section">
+            <h2>👥 Governance Structure</h2>
             
-            <div style="background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(118,75,162,0.1)); padding: 25px; border-radius: 15px; margin: 20px 0;">
-                <h3>🗓️ Why January 26?</h3>
-                <p><span class="highlight">January 26</span> was chosen as the date of commencement because of its historical significance. On this day in <strong>1930</strong>, Purna Swaraj (Complete Independence) day was celebrated following the Lahore Session resolution of December 1929 by the Indian National Congress.</p>
-            </div>
-            
-            <h3>📅 Phased Implementation</h3>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">November 26, 1949</div>
-                    <h3>⚡ Immediate Effect Articles</h3>
-                    <p><strong>Articles that came into force immediately:</strong></p>
-                    <ul style="margin-top: 10px; padding-left: 20px;">
-                        <li>Articles 5, 6, 7, 8, 9 - <strong>Citizenship</strong></li>
-                        <li>Article 60 - <strong>President's Oath</strong></li>
-                        <li>Article 324 - <strong>Elections</strong></li>
-                        <li>Articles 366, 367 - <strong>Definitions & Interpretations</strong></li>
-                        <li>Articles 379, 380, 388 - <strong>Provisional Parliament</strong></li>
-                        <li>Articles 391, 392, 393 - <strong>Transitional Provisions</strong></li>
-                    </ul>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-number">7</div>
+                    <div class="feature-title">🎯 Single Citizenship</div>
+                    <div class="feature-description">
+                        Unlike federal countries like USA, India provides single citizenship for all Indians.
+                    </div>
+                    <div class="feature-highlight">
+                        <strong>Benefit:</strong> Promotes national unity and prevents divided loyalty
+                    </div>
                 </div>
                 
-                <div class="timeline-item">
-                    <div class="timeline-date">January 26, 1950</div>
-                    <h3>🎉 Full Implementation</h3>
-                    <p>The entire Constitution came into effect, replacing:</p>
-                    <ul style="margin-top: 10px; padding-left: 20px;">
-                        <li>Indian Independence Act of 1947</li>
-                        <li>Government of India Act of 1935</li>
-                        <li>All related amending acts</li>
-                    </ul>
-                    <p><strong>Exception:</strong> The Abolition of Privy Council Jurisdiction Act (1949) was continued.</p>
+                <div class="feature-card">
+                    <div class="feature-number">8</div>
+                    <div class="feature-title">🏛️ Independent Bodies</div>
+                    <div class="feature-description">
+                        Constitutional bodies ensure checks and balances in governance.
+                    </div>
+                    <div class="feature-highlight">
+                        <strong>Examples:</strong> Election Commission, CAG, UPSC, Finance Commission, etc.
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-number">9</div>
+                    <div class="feature-title">🏗️ Three-tier Government</div>
+                    <div class="feature-description">
+                        Governance at Union, State, and Local (Panchayati Raj) levels.
+                    </div>
+                    <div class="feature-highlight">
+                        <strong>73rd & 74th Amendments:</strong> Constitutional recognition to local governments
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-number">10</div>
+                    <div class="feature-title">🤝 Co-operative Societies</div>
+                    <div class="feature-description">
+                        97th Amendment (2011) added co-operative societies as a constitutional right.
+                    </div>
+                    <div class="feature-highlight">
+                        <strong>Significance:</strong> Promotes grassroots economic democracy and self-help
+                    </div>
                 </div>
             </div>
             
-            <div style="background: rgba(255,107,107,0.1); padding: 20px; border-radius: 15px; border-left: 5px solid #FF6B6B; margin: 20px 0;">
-                <h3>🔧 Special Provisions</h3>
-                <p><strong>Article 391:</strong> Gave the President temporary power to amend the First and Fourth Schedules between the Constitution's passing and commencement. This power was later omitted by the 42nd Amendment Act of 1976 during the Emergency period (1975-77).</p>
+            <h3>🚨 Emergency Provisions</h3>
+            <div class="emergency-types">
+                <div class="emergency-card">
+                    <h4>🛡️ National Emergency</h4>
+                    <p><strong>Article 352</strong></p>
+                    <p>War, external aggression, or armed rebellion</p>
+                    <div style="margin-top: 15px;">
+                        <strong>Effect:</strong> Center can take over state subjects
+                    </div>
+                </div>
+                
+                <div class="emergency-card">
+                    <h4>🏛️ State Emergency</h4>
+                    <p><strong>Article 356</strong></p>
+                    <p>Failure of constitutional machinery in states</p>
+                    <div style="margin-top: 15px;">
+                        <strong>Effect:</strong> President's Rule imposed
+                    </div>
+                </div>
+                
+                <div class="emergency-card">
+                    <h4>💰 Financial Emergency</h4>
+                    <p><strong>Article 360</strong></p>
+                    <p>Financial stability or credit of India threatened</p>
+                    <div style="margin-top: 15px;">
+                        <strong>Effect:</strong> Center controls state finances
+                    </div>
+                </div>
             </div>
             
-            <div style="background: rgba(78,205,196,0.1); padding: 20px; border-radius: 15px; border-left: 5px solid #4ECDC4; margin: 20px 0;">
-                <h3>🏛️ Continuity of Governance</h3>
-                <p>The Constituent Assembly didn't end after adopting the Constitution. It continued as the <strong>provisional parliament of India</strong> from January 26, 1950, until the formation of the new Parliament after the first general elections in 1951-52.</p>
+            <div class="highlight-box">
+                <h3>🏛️ Parliamentary vs Presidential System</h3>
+                <p><strong>India chose Parliamentary system over Presidential because:</strong></p>
+                <ul style="margin-top: 15px; padding-left: 20px; line-height: 1.8;">
+                    <li>✅ <strong>Familiarity:</strong> Indians were familiar with British system</li>
+                    <li>✅ <strong>Responsibility:</strong> Executive accountable to legislature</li>
+                    <li>✅ <strong>Flexibility:</strong> Easy to change government through no-confidence</li>
+                    <li>✅ <strong>Representation:</strong> Better representation of diverse interests</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="rights" class="content-section">
+            <h2>🛡️ Rights, Duties & Principles</h2>
+            
+            <div class="rights-grid">
+                <div class="rights-card">
+                    <h3>⚖️ Fundamental Rights</h3>
+                    <p><strong>Articles 12-35</strong></p>
+                    <ul style="margin-top: 10px; line-height: 1.6;">
+                        <li>Right to Equality</li>
+                        <li>Right to Freedom</li>
+                        <li>Right against Exploitation</li>
+                        <li>Right to Freedom of Religion</li>
+                        <li>Cultural and Educational Rights</li>
+                        <li>Right to Constitutional Remedies</li>
+                    </ul>
+                    <div class="feature-highlight" style="margin-top: 15px;">
+                        <strong>Justiciable:</strong> Enforceable in courts
+                    </div>
+                </div>
+                
+                <div class="rights-card">
+                    <h3>🎯 Directive Principles</h3>
+                    <p><strong>Articles 36-51</strong></p>
+                    <ul style="margin-top: 10px; line-height: 1.6;">
+                        <li>Economic and Social Democracy</li>
+                        <li>Welfare State Principles</li>
+                        <li>International Peace & Security</li>
+                        <li>Environmental Protection</li>
+                        <li>Equal Justice & Free Legal Aid</li>
+                    </ul>
+                    <div class="feature-highlight" style="margin-top: 15px;">
+                        <strong>Non-justiciable:</strong> Guidelines for government policy
+                    </div>
+                </div>
+                
+                <div class="rights-card">
+                    <h3>📋 Fundamental Duties</h3>
+                    <p><strong>Article 51A (42nd Amendment, 1976)</strong></p>
+                    <ul style="margin-top: 10px; line-height: 1.6;">
+                        <li>Respect Constitution & National Symbols</li>
+                        <li>Protect Sovereignty & Unity</li>
+                        <li>Defend the Country</li>
+                        <li>Promote Harmony</li>
+                        <li>Protect Environment</li>
+                        <li>Develop Scientific Temper</li>
+                        <li>Safeguard Public Property</li>
+                    </ul>
+                    <div class="feature-highlight" style="margin-top: 15px;">
+                        <strong>11 Duties:</strong> Added in different amendments
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>🕌 Secular State</h3>
+                <p>India is a secular state that treats all religions equally. The word "Secular" was added to the Preamble by the <strong>42nd Amendment in 1976</strong>.</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
+                    <div style="background: rgba(255,107,107,0.1); padding: 15px; border-radius: 10px;">
+                        <strong>🚫 No State Religion</strong><br>
+                        India has no official religion
+                    </div>
+                    <div style="background: rgba(78,205,196,0.1); padding: 15px; border-radius: 10px;">
+                        <strong>⚖️ Equal Treatment</strong><br>
+                        All religions treated equally
+                    </div>
+                    <div style="background: rgba(69,183,209,0.1); padding: 15px; border-radius: 10px;">
+                        <strong>🛡️ Religious Freedom</strong><br>
+                        Freedom to practice any religion
+                    </div>
+                    <div style="background: rgba(150,206,180,0.1); padding: 15px; border-radius: 10px;">
+                        <strong>🤝 Positive Secularism</strong><br>
+                        State supports all religions
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="special" class="content-section">
+            <h2>⭐ Special Constitutional Features</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card pulse">
+                    <div class="feature-number">⭐</div>
+                    <div class="feature-title">📜 Lengthiest Written Constitution</div>
+                    <div class="feature-description">
+                        The Indian Constitution is the world's longest written constitution with detailed provisions for governance.
+                    </div>
+                    <div class="feature-highlight">
+                        <strong>Growth:</strong> From 395 articles in 1950 to 470+ articles today through amendments
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-number">🌐</div>
+                    <div class="feature-title">🎨 Borrowed Yet Original</div>
+                    <div class="feature-description">
+                        Though drawn from 60+ countries' constitutions, it's uniquely Indian in character and spirit.
+                    </div>
+                    <div class="feature-highlight">
+                        <strong>Philosophy:</strong> "Borrowed from everywhere but copied from nowhere"
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-number">⚖️</div>
+                    <div class="feature-title">🔄 Dynamic Amendment Process</div>
+                    <div class="feature-description">
+                        Three types of amendment procedures make it neither too rigid nor too flexible.
+                    </div>
+                    <div class="feature-highlight">
+                        <strong>Types:</strong> Simple majority, Special majority, Special majority + State ratification
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-number">🏛️</div>
+                    <div class="feature-title">⚡ Quasi-Federal Structure</div>
+                    <div class="feature-description">
+                        Federal in normal times, unitary during emergencies - adapts to circumstances.
+                    </div>
+                    <div class="feature-highlight">
+                        <strong>Flexibility:</strong> Can respond to both peace and crisis situations effectively
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>🎯 Unique Constitutional Innovations</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                    <div style="background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <h4>🔗 Integrated Judiciary</h4>
+                        <p>Single judicial system from Supreme Court to District Courts - unique among federal countries</p>
+                    </div>
+                    <div style="background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <h4>📋 Directive Principles</h4>
+                        <p>Non-justiciable guidelines for creating a welfare state - borrowed from Ireland</p>
+                    </div>
+                    <div style="background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <h4>🎯 Single Citizenship</h4>
+                        <p>All Indians are citizens of India only - promotes national unity</p>
+                    </div>
+                    <div style="background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <h4>🗳️ Universal Suffrage</h4>
+                        <p>Adult franchise from day one - bold decision for a newly independent nation</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>📊 Constitutional Milestones</h3>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-number">1950</div>
+                    <div>Constitution Adopted</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">105+</div>
+                    <div>Amendments Passed</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">21→18</div>
+                    <div>Voting Age Reduced</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">470+</div>
+                    <div>Current Articles</div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>🌟 Why These Features Matter</h3>
+                <p>The salient features of the Indian Constitution reflect the wisdom of the founding fathers who:</p>
+                <ul style="margin-top: 15px; padding-left: 20px; line-height: 1.8;">
+                    <li>🎯 <strong>Balanced diversity with unity</strong> - Accommodating India's vast diversity while maintaining national integrity</li>
+                    <li>⚖️ <strong>Ensured flexibility with stability</strong> - Amendable constitution that can evolve with changing times</li>
+                    <li>🛡️ <strong>Protected rights while enabling governance</strong> - Strong rights protection without paralyzing government</li>
+                    <li>🌐 <strong>Combined global best practices</strong> - Learning from world experiences while remaining true to Indian values</li>
+                    <li>🏛️ <strong>Created institutional strength</strong> - Independent bodies to check government power and ensure accountability</li>
+                </ul>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 30px; border-radius: 20px; margin-top: 30px; text-align: center;">
+                <h3 style="color: #FFD93D; margin-bottom: 15px;">🏆 The Living Constitution</h3>
+                <p style="font-size: 1.1rem; line-height: 1.6;">
+                    The Indian Constitution is not just a legal document but a living organism that has grown and adapted over 75+ years. Its salient features continue to guide India's democratic journey, balancing tradition with modernity, diversity with unity, and individual rights with collective responsibilities.
+                </p>
             </div>
         </div>
     </div>
@@ -591,23 +854,68 @@
             event.target.classList.add('active');
         }
         
-        // Add smooth scrolling and entrance animations
+        // Add entrance animations on load
         window.addEventListener('load', function() {
-            const cards = document.querySelectorAll('.stat-card, .committee-card, .timeline-item');
+            const cards = document.querySelectorAll('.feature-card, .rights-card, .emergency-card, .stat-box');
             cards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
-                card.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s ease';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
             });
         });
         
-        // Add hover effects for interactive elements
-        document.querySelectorAll('.stat-card, .committee-card').forEach(card => {
+        // Add interactive hover effects
+        document.querySelectorAll('.feature-card, .rights-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-10px) scale(1.02)';
+                this.style.boxShadow = '0 20px 50px rgba(0,0,0,0.2)';
             });
             
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0) scale(1)';
+                this.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+            });
+        });
+        
+        // Add click animation for stats
+        document.querySelectorAll('.stat-box').forEach(stat => {
+            stat.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+        
+        // Table row hover effects
+        document.querySelectorAll('.comparison-table tr').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                if (!this.querySelector('th')) {
+                    this.style.backgroundColor = 'rgba(102,126,234,0.15)';
+                    this.style.transform = 'scale(1.01)';
+                }
+            });
+            
+            row.addEventListener('mouseleave', function() {
+                if (!this.querySelector('th')) {
+                    this.style.backgroundColor = '';
+                    this.style.transform = 'scale(1)';
+                }
+            });
+        });
+        
+        // Smooth scroll behavior for better UX
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelector('.container').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             });
         });
     </script>
